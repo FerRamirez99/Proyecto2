@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Bookshelf Digital</title>
         <!--ICONO TAB-->
-        <!-- <link rel="icon" type="image/x-icon" href="..."> -->
+        <link rel="icon" type="image/x-icon" href="./assets/img/favourite.ico">
         <!--LINKS PARA FONTAWESOME-->
         <link rel="stylesheet" href="./assets/fontawesome/css/fontawesome.css">
         <link rel="stylesheet" href="./assets/fontawesome/css/brands.css">
@@ -21,7 +21,7 @@
             <nav class="navbar navbar-expand-md">
                 <div class="container-fluid">
                     <!--LOGO-->
-                    <a href="#"><img src="./assets/img/agenda.png" alt="Logo" style="height: 50px;"></a>
+                    <a href="#"><img src="./assets/img/favourite.png" alt="Logo" class="logo"></a>
                     <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -45,27 +45,27 @@
                     <!--JUMBOTRON-->
                     <div class="container">
                         <h1 class="display-5">Bookshelf Digital</h1>
-                        <p class="lead">...</p>
+                        <p class="lead">Donde podrás guardar tus libros favoritos.</p>
                     </div>
                 </div>
             </section>
-            <section>
-                <div class="container mt-3">
+            <section class="addForm">
+                <div class="container">
                     <form>
                         <h2>Añadir libros</h2>  
-                        <div class="mb-3">
+                        <div class="titleInput">
                             <label for="title" class="form-label">Título</label>
                             <input type="text" class="form-control" id="title">
                         </div>
-                        <div class="mb-3">
+                        <div class="authorInput">
                             <label for="author" class="form-label">Autor</label>
                             <input type="text" class="form-control" id="author">
                         </div>
-                        <div class="mb-3">
+                        <div class="editorialInput">
                             <label for="ed" class="form-label">Editorial</label>
                             <input type="text" class="form-control" id="ed">
                         </div>
-                        <div class="mb-3 form-check">
+                        <div class="form-check">
                             <input type="checkbox" class="form-check-input" id="finished">
                             <label class="form-check-label" for="finished">Completado</label>
                         </div>
@@ -73,48 +73,49 @@
                     </form>
                 </div> 
             </section>
-            <section>
+            <hr>
+            <section class="showBooks">
                 <div class="container mt-3">
                     <h2>Libros guardados</h2>            
-                    <table class="table table-hover table-responsive-sm">
+                    <table class="table table-hover">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Firstname</th>
-                                <th scope="col">Lastname</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Completado</th>
-                                <th scope="col">Editar</th>
-                                <th scope="col">Borrar</th>
+                                <th scope="col">Título</th>
+                                <th scope="col">Autor</th>
+                                <th scope="col">Editorial</th>
+                                <th scope="col" class="center">Completado</th>
+                                <th scope="col" class="center">Editar</th>
+                                <th scope="col" class="center">Borrar</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <th scope="row">1</th>
-                                <td>John</td>
-                                <td>Doe</td>
-                                <td>john@example.com</td>
-                                <td><i class="fa-solid fa-check"></i></td>
-                                <td><i class="fa-solid fa-pen-to-square"></i></td>
-                                <td><i class="fa-solid fa-trash"></i></td>
+                                <td>Los Toquis Sangrientos</td>
+                                <td>Ricardo Avello</td>
+                                <td>Autoedición</td>
+                                <td class="center"><i class="fa-solid fa-check"></i></td>
+                                <td class="center"><button class="btn btn-outline-primary"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                                <td class="center"><button class="btn btn-outline-secondary"><i class="fa-solid fa-trash"></i></button></td>
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
-                                <td>Mary</td>
-                                <td>Moe</td>
-                                <td>mary@example.com</td>
-                                <td></td>
-                                <td><i class="fa-solid fa-pen-to-square"></i></td>
-                                <td><i class="fa-solid fa-trash"></i></td>
+                                <td>The Great Gatsby</td>
+                                <td>F. S. Fitzgerald</td>
+                                <td>Pluton</td>
+                                <td class="center"></td>
+                                <td class="center"><button class="btn btn-outline-primary"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                                <td class="center"><button class="btn btn-outline-secondary"><i class="fa-solid fa-trash"></i></button></td>
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
-                                <td>July</td>
-                                <td>Dooley</td>
-                                <td>july@example.com</td>
-                                <td></td>
-                                <td><i class="fa-solid fa-pen-to-square"></i></td>
-                                <td><i class="fa-solid fa-trash"></i></td>
+                                <td>La Séptima M</td>
+                                <td>Francisca Solar</td>
+                                <td>Crossbooks Chile</td>
+                                <td class="center"></td>
+                                <td class="center"><button class="btn btn-outline-primary"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                                <td class="center"><button class="btn btn-outline-secondary"><i class="fa-solid fa-trash"></i></button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -125,7 +126,7 @@
             <div class="container">
                 <div class="row">
                     <!--REDES SOCIALES-->
-                    <div class="col-lg-6">
+                    <div class="col-lg-4 socials">
                         <a href="#"><i class="fa-brands fa-facebook"></i></a>
                         <a href="#"><i class="fa-brands fa-twitter"></i></a>
                         <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -133,11 +134,11 @@
                         <a href="#"><i class="fa-brands fa-youtube"></i></a>
                     </div>
                     <!--LINKS DEL NEGOCIO-->
-                    <div class="col-lg-3">
-                        <h6>Nosotros</h6>
+                    <div class="col-lg-4 footer-link">
+                        <a href="#">Nosotros</a>
                     </div>
-                    <div class="col-lg-3">
-                        <h6>Legal</h6>
+                    <div class="col-lg-4 footer-link">
+                        <a href="#">Legal</a>
                     </div>
                 </div>
                 <p>&copy Esta es una página ficticia para fines académicos.</p>
