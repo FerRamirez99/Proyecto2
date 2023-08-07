@@ -57,6 +57,9 @@ hr {
     border: 0;
     box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
 }
+#updateForm {
+    display: none;
+}
 /*TABLE*/
 .table .center{
     text-align: center;
