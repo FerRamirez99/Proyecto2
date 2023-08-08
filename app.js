@@ -2,14 +2,14 @@
 let data = [
     {
         id : 1,
-        titulo : 'Gideon The Ninth',
-        autor : 'Tamsyn Muir',
+        title : 'Gideon The Ninth',
+        author : 'Tamsyn Muir',
         editorial : 'Nova',
     },
     {
         id : 2,
-        titulo : 'Joyland',
-        autor : 'Stephen King',
+        title : 'Joyland',
+        author : 'Stephen King',
         editorial : 'Plaza Janéz',
     }
 ];
@@ -31,8 +31,8 @@ function readAll() {
     objectData.map(record => (      //*arr.map() --> tomar los datos del array y hacer algo con ellos (usar la funcion record)
         //Al string elements le da todos los tags de la tabla con sus valores
         elements += `<tr>
-            <td>${record.titulo}</td>
-            <td>${record.autor}</td>
+            <td>${record.title}</td>
+            <td>${record.author}</td>
             <td>${record.editorial}</td>
             <td class="center"><button class="btn btn-outline-primary" onclick={edit(${record.id})}><i class="fa-solid fa-pen-to-square"></i></button></td>
             <td class="center"><button class="btn btn-outline-secondary" onclick={deleteData(${record.id})}><i class="fa-solid fa-trash"></i></button></td>
@@ -52,10 +52,10 @@ function add() {
     //Crea un nuevo objeto con los valores del formulario
     let newObj = {
         id : data.length + 1,
-        titulo : title,
-        autor : author,
+        title : title,
+        author : author,
         editorial : editorial
-    }
+    };
 
     //Agregar el nuevo objeto al array data
     data.push(newObj);
@@ -66,7 +66,7 @@ function add() {
     //Llamar a la funcion que lee los elementos guardados para que se actualice la tabla
     readAll();
 }
-//!-------------------------------------------------------------
+
 //Funcion para editar elementos guardados
 function edit(id) {
     //Cambiar el boton
@@ -77,39 +77,42 @@ function edit(id) {
     let obj = data.find(rec => rec.id === id);
     
     //Poner los elementos gurdados en los campos del form
-    document.querySelector('#title').value = obj.titulo;
-    document.querySelector('#author').value = obj.autor;
+    document.querySelector('#title').value = obj.title;
+    document.querySelector('#author').value = obj.author;
     document.querySelector('#ed').value = obj.editorial;
-
     document.querySelector('#id').value = obj.id;
 }
-//!hasta aqiui funcionaba bien
-//al guaradr la modificacion tira undefined
-//guarda el objeto modificado pero no lo lee bien
+
+//Funcion para alcualizar los datos de la tabla
 function update() {
+    //Guarda lo que este escrito en el formulario en variables (id, title, author, editorial)
     let id = parseInt(document.querySelector('#id').value);     //*parseInt() --> convierte un string a number
-    let newTitle = document.getElementById('title').value;
-    let newAuthor = document.querySelector('#author').value;
+    let title = document.querySelector('#title').value;
+    let author = document.querySelector('#author').value;
+    let editorial = document.querySelector('#ed').value;
 
-    //?--------------------------------------------------------------
-    let editorial = document.querySelector('#ed').value;  //*this one works
-
+    //Encuentra el index en base al id y lo guarda en una variable
     let index = data.findIndex(rec => rec.id === id);
-    data[index] = {id, newTitle, newAuthor, editorial};
+    //En la posicion del index del array, cambia los datos actualizados
+    data[index] = {id, title, author, editorial};
 
-    //volver a cambiar los botones|
+    //Volver a cambiar los botones
     document.getElementById('btnEdit').style.display = "none";
     document.getElementById('btn').style.display = "block";
 
+    //Limpiar formulario
+    document.getElementById('bookForm').reset();
+    
+    //Llamar a la funcion que lee los elementos guardados para que se actualice la tabla
     readAll();
-    console.log(data);
 }
-//!-------------------------------------------------------------------------
+
 //Funcion para eliminar elementos guardados
 function deleteData(id) {
     //*arr.filter() --> filtra el array segun el filtro indicado --> todos los elementos que no coincidan con el id que se le pasa como parametro
     //Sets los elementos de data para que solo incluya los elementos que no coincidan con el id dado  
     data = data.filter(rec => rec.id !== id);     
+    
     //Llamar a la funcion que lee los elementos guardados para que se actualice la tabla
     readAll();
 }
