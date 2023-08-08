@@ -39,7 +39,7 @@ hr {
     box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5);
     background-size: cover;
     background-position: center;
-    padding: 120px;
+    padding: 100px 200px;
     color: #FFF;;
 }
 /*FORM*/
@@ -57,7 +57,12 @@ hr {
     border: 0;
     box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
 }
-#updateForm {
+.btn-primary:active {
+    background-color: #F17A7E;
+    border: 0;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
+}
+#btnEdit {
     display: none;
 }
 /*TABLE*/
@@ -89,7 +94,6 @@ footer {
     background-color: #4A6163;
     color: #FFF;
     text-align: center;
-    height: 120px;
     padding: 30px;
 }
 footer a {
@@ -115,4 +119,35 @@ footer .footer-link{
 footer p {
     padding-top: 20px;
     font-size: 14px;
+}
+/*MOBILE*/
+@media only screen and (max-width: 600px) {
+    .navbar-nav {
+        text-align: center;
+    }
+    .nav-item {
+        margin: 8px 0;
+    }
+    .custom-toggler .navbar-toggler-icon {
+        background-image: url(./assets/img/custom-menu-icon.svg);
+    }
+    .custom-toggler {
+        border: 1px solid #FFFFFF;
+    }
+    .jumbotron {
+        padding: 50px;
+        text-align: center;
+    }
+    .addForm, .showBooks {
+        padding: 30px 10px;
+    }
+    .btn-primary {
+        width: 40%;
+    }  
+    footer {
+        height: auto;
+    }
+    footer .col-lg-4 {
+        margin-bottom: 10px;
+    }
 }

@@ -19,7 +19,7 @@
         <header>
             <!--NAVBAR-->
             <nav class="navbar navbar-expand-md">
-                <div class="container-fluid">
+                <div class="container">
                     <!--LOGO-->
                     <a href="#"><img src="./assets/img/favourite.png" alt="Logo" class="logo"></a>
                     <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,6 +53,7 @@
                 <div class="container">
                     <form id="bookForm">
                         <h2>Añadir libros</h2>  
+                        <input type="text" id="id" hidden>
                         <div class="titleInput">
                             <label for="title" class="form-label">Título</label>
                             <input type="text" class="form-control" id="title" name="title">
@@ -65,64 +66,30 @@
                             <label for="ed" class="form-label">Editorial</label>
                             <input type="text" class="form-control" id="ed" name="editorial">
                         </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="finished">
-                            <label class="form-check-label" for="finished">Completado</label>
-                        </div>
                         <button type="button" class="btn btn-primary" id="btn" onclick="add()">Añadir</button>
-                    </form>
-                    <!--FORM PARA MODIFICAR ELEMENTOS-->
-                    <form id="updateForm">
-                        <h2>Editar</h2>  
-                        <input type="text" id="id" hidden>
-                        <div class="titleInput">
-                            <label for="title" class="form-label">Título</label>
-                            <input type="text" class="form-control" id="titleEdit" name="title">
-                        </div>
-                        <div class="authorInput">
-                            <label for="author" class="form-label">Autor</label>
-                            <input type="text" class="form-control" id="authorEdit" name="author">
-                        </div>
-                        <div class="editorialInput">
-                            <label for="ed" class="form-label">Editorial</label>
-                            <input type="text" class="form-control" id="edEdit" name="editorial">
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="finishedEdit">
-                            <label class="form-check-label" for="finished">Completado</label>
-                        </div>
                         <button type="button" class="btn btn-primary" id="btnEdit" onclick="update()">Guardar</button>
                     </form>
                 </div> 
             </section>
             <hr>
             <section class="showBooks">
-                <div class="container mt-3">
-                    <h2>Libros guardados</h2>            
-                    <table class="table table-hover" id="bookmarks">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Título</th>
-                                <th scope="col">Autor</th>
-                                <th scope="col">Editorial</th>
-                                <th scope="col" class="center">Completado</th>
-                                <th scope="col" class="center">Editar</th>
-                                <th scope="col" class="center">Borrar</th>
-                            </tr>
-                        </thead>
-                        <tbody id="dataBooks">
-                            <!-- <tr>
-                                <th scope="row">1</th>
-                                <td>La Séptima M</td>
-                                <td>Francisca Solar</td>
-                                <td>Crossbooks Chile</td>
-                                <td class="center"></td>
-                                <td class="center"><button class="btn btn-outline-primary"><i class="fa-solid fa-pen-to-square"></i></button></td>
-                                <td class="center"><button class="btn btn-outline-secondary"><i class="fa-solid fa-trash"></i></button></td>
-                            </tr> -->
-                        </tbody>
-                    </table>
+                <div class="container">
+                    <h2>Libros guardados</h2>   
+                    <div class="table-responsive">
+                        <table class="table table-hover" id="bookmarks">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Título</th>
+                                    <th scope="col">Autor</th>
+                                    <th scope="col">Editorial</th>
+                                    <th scope="col" class="center">Editar</th>
+                                    <th scope="col" class="center">Borrar</th>
+                                </tr>
+                            </thead>
+                            <tbody id="dataBooks">
+                            </tbody>
+                        </table>
+                    </div>         
                 </div>
             </section>
         </main>
