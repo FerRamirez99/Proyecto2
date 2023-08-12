@@ -51,22 +51,28 @@
             </section>
             <section class="addForm">
                 <div class="container">
+                    <!--FORMUALRIO PARA INGRESAR DATOS-->
                     <form id="bookForm">
                         <h2>Añadir libros</h2>  
                         <input type="text" id="id" hidden>
+                        <!--INPUT TITULO-->
                         <div class="titleInput">
                             <label for="title" class="form-label">Título</label>
                             <input type="text" class="form-control" id="title" name="title">
                         </div>
+                        <!--INPUT AUTOR-->
                         <div class="authorInput">
                             <label for="author" class="form-label">Autor</label>
                             <input type="text" class="form-control" id="author" name="author">
                         </div>
+                        <!--INPUT EDITORIAL-->
                         <div class="editorialInput">
                             <label for="ed" class="form-label">Editorial</label>
                             <input type="text" class="form-control" id="ed" name="editorial">
                         </div>
+                        <!--BOTON PARA AGREGAR DATO-->
                         <button type="button" class="btn btn-primary" id="btn" onclick="add()">Añadir</button>
+                        <!--BOTON PARA ACTUALIZAR DATO-->
                         <button type="button" class="btn btn-primary" id="btnEdit" onclick="update()">Guardar</button>
                     </form>
                 </div> 
@@ -76,9 +82,11 @@
                 <div class="container">
                     <h2>Libros guardados</h2>   
                     <div class="table-responsive">
+                        <!--TABLA DE DATOS GUARDADOS-->
                         <table class="table table-hover" id="bookmarks">
                             <thead>
                                 <tr>
+                                    <!--ENCABEZADOS-->
                                     <th scope="col">Título</th>
                                     <th scope="col">Autor</th>
                                     <th scope="col">Editorial</th>
@@ -87,6 +95,7 @@
                                 </tr>
                             </thead>
                             <tbody id="dataBooks">
+                                <!--CUERPO DONDE SE AGREGAN LOS DATOS-->
                             </tbody>
                         </table>
                     </div>         
@@ -104,7 +113,7 @@
                         <a href="#"><i class="fa-brands fa-tiktok"></i></a>
                         <a href="#"><i class="fa-brands fa-youtube"></i></a>
                     </div>
-                    <!--LINKS DEL NEGOCIO-->
+                    <!--LINKS DE LA PAGINA-->
                     <div class="col-lg-4 footer-link">
                         <a href="#">Nosotros</a>
                     </div>
@@ -115,6 +124,7 @@
                 <p>&copy Esta es una página ficticia para fines académicos.</p>
             </div>
         </footer>
+        <!--SCRIPT CUSTOM-->
         <script src="./app.js"></script>
         <!--SCRIPT BOOTSTRAP-->
         <script src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -15,18 +15,21 @@ Luego se paso a desarrollar la página utilizando HTML5 semántico y CSS para lo
 ![Screenshot landing page versión desktop](./assets/img/readme-img/desk-ver.png)
 ![Screenshot landing page versión mobile](./assets/img/readme-img/mobile-ver.png)
 
-Finalmente, se incorporan las diferentes funcionalidades de la aplicación a través de JavaScript, utilizando 5 funciones:
-1. Función Leer: Se encarga de leer todos los datos guardados.
-2. Función Añadir: Permite añadir datos definidos por el usuario.
-3. Función Editar: La cual busca los datos que se desean cambiar.
-4. Función Actualizar: En donde se guardan los cambios realizados a los datos y muestra su versión actualizada.
-5. Función Borrar: Elimina el dato deseado de los registros.
+Finalmente, se incorporan las diferentes funcionalidades de la aplicación a través de JavaScript, utilizando 6 funciones: Validar, Leer, Añadir, Editar, Actualizar y Borrar.
 
 ## **Features:**
 Para el desarrollo del proyecto se utilizaron diferentes tecnologías, tales como:
 - Aplicación Figma: Para el desarrollo del diseño inicial de la página web.
 - Bootstrap: Incorporación de variados componentes del framework para agilizar el desarrollo del prototipo y facilitar el Responsive Web Design.
 - Fontawesome: Para la incorporación de diferentes íconos.
+***
+#### **Javascript:**
+1. Función Validar: Para comprobar que el formulario contenga datos.
+2. Función Leer: Se encarga de leer todos los datos guardados.
+3. Función Añadir: Permite añadir datos definidos por el usuario.
+4. Función Editar: La cual busca los datos que se desean cambiar.
+5. Función Actualizar: En donde se guardan los cambios realizados a los datos y muestra su versión actualizada.
+6. Función Borrar: Elimina el dato deseado de los registros.
 
 ## **Objetivos:**
 El proyecto se enfoca en el desarrollo de una aplicación CRUD, y más específicamente:

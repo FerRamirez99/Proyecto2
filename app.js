@@ -1,18 +1,36 @@
 //Array con objetos(libros) para partir
 let data = [
     {
-        id : 1,
-        title : 'Gideon The Ninth',
-        author : 'Tamsyn Muir',
-        editorial : 'Nova',
-    },
-    {
-        id : 2,
-        title : 'Joyland',
-        author : 'Stephen King',
-        editorial : 'Plaza Janéz',
+        id: 1,
+        title: 'El gran Gatsby',
+        author: 'F. Scott Fitzgerald',
+        editorial: 'Plutón',
     }
 ];
+
+//Funcion para validar que el formulario tenga data
+function validateForm() {
+    let title = document.getElementById('title').value;
+    let author = document.getElementById('author').value;
+    let editorial = document.getElementById('ed').value;
+
+    if (title == "") {
+        alert('Se reuqiere un título.');
+        return false;
+    }
+
+    if (author == "") {
+        alert('Se requiere un autor');
+        return false;
+    }
+
+    if (editorial == "") {
+        alert('Se reuqiere una editorial');
+        return false;
+    }
+
+    return true;
+}
 
 //Funcion para leer el array
 function readAll() {
@@ -39,32 +57,34 @@ function readAll() {
         </tr>`
     ));
     //Sets el html de la tabla para que sea elements
-    tableData.innerHTML = elements;     
+    tableData.innerHTML = elements;
 }
 
 //Funcion para añadir nuevo elemento al array
 function add() {
-    //Guardar los valores del formulario en una variable (title, author, editorial)
-    let title = document.getElementById('title').value;
-    let author = document.getElementById('author').value;
-    let editorial = document.getElementById('ed').value;
+    if (validateForm() == true) {
+        //Guardar los valores del formulario en una variable (title, author, editorial)
+        let title = document.getElementById('title').value;
+        let author = document.getElementById('author').value;
+        let editorial = document.getElementById('ed').value;
 
-    //Crea un nuevo objeto con los valores del formulario
-    let newObj = {
-        id : data.length + 1,
-        title : title,
-        author : author,
-        editorial : editorial
-    };
+        //Crea un nuevo objeto con los valores del formulario
+        let newObj = {
+            id: data.length + 1,
+            title: title,
+            author: author,
+            editorial: editorial
+        };
 
-    //Agregar el nuevo objeto al array data
-    data.push(newObj);
+        //Agregar el nuevo objeto al array data
+        data.push(newObj);
 
-    //Limpiar formulario
-    document.getElementById('bookForm').reset()
+        //Limpiar formulario
+        document.getElementById('bookForm').reset()
 
-    //Llamar a la funcion que lee los elementos guardados para que se actualice la tabla
-    readAll();
+        //Llamar a la funcion que lee los elementos guardados para que se actualice la tabla
+        readAll();
+    }
 }
 
 //Funcion para editar elementos guardados
@@ -75,7 +95,7 @@ function edit(id) {
 
     //Encontrar el obj con el id que se pasa
     let obj = data.find(rec => rec.id === id);
-    
+
     //Poner los elementos gurdados en los campos del form
     document.querySelector('#title').value = obj.title;
     document.querySelector('#author').value = obj.author;
@@ -85,34 +105,36 @@ function edit(id) {
 
 //Funcion para alcualizar los datos de la tabla
 function update() {
-    //Guarda lo que este escrito en el formulario en variables (id, title, author, editorial)
-    let id = parseInt(document.querySelector('#id').value);     //*parseInt() --> convierte un string a number
-    let title = document.querySelector('#title').value;
-    let author = document.querySelector('#author').value;
-    let editorial = document.querySelector('#ed').value;
+    if (validateForm() == true) {
+        //Guarda lo que este escrito en el formulario en variables (id, title, author, editorial)
+        let id = parseInt(document.querySelector('#id').value);     //*parseInt() --> convierte un string a number
+        let title = document.querySelector('#title').value;
+        let author = document.querySelector('#author').value;
+        let editorial = document.querySelector('#ed').value;
 
-    //Encuentra el index en base al id y lo guarda en una variable
-    let index = data.findIndex(rec => rec.id === id);
-    //En la posicion del index del array, cambia los datos actualizados
-    data[index] = {id, title, author, editorial};
+        //Encuentra el index en base al id y lo guarda en una variable
+        let index = data.findIndex(rec => rec.id === id);
+        //En la posicion del index del array, cambia los datos actualizados
+        data[index] = { id, title, author, editorial };
 
-    //Volver a cambiar los botones
-    document.getElementById('btnEdit').style.display = "none";
-    document.getElementById('btn').style.display = "block";
+        //Volver a cambiar los botones
+        document.getElementById('btnEdit').style.display = "none";
+        document.getElementById('btn').style.display = "block";
 
-    //Limpiar formulario
-    document.getElementById('bookForm').reset();
-    
-    //Llamar a la funcion que lee los elementos guardados para que se actualice la tabla
-    readAll();
+        //Limpiar formulario
+        document.getElementById('bookForm').reset();
+
+        //Llamar a la funcion que lee los elementos guardados para que se actualice la tabla
+        readAll();
+    }
 }
 
 //Funcion para eliminar elementos guardados
 function deleteData(id) {
     //*arr.filter() --> filtra el array segun el filtro indicado --> todos los elementos que no coincidan con el id que se le pasa como parametro
     //Sets los elementos de data para que solo incluya los elementos que no coincidan con el id dado  
-    data = data.filter(rec => rec.id !== id);     
-    
+    data = data.filter(rec => rec.id !== id);
+
     //Llamar a la funcion que lee los elementos guardados para que se actualice la tabla
     readAll();
 }
